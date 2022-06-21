@@ -23,7 +23,7 @@ class ModelForCountry:
         return self.__country, self.__matrixX, self.__matrixY, self.__listOfYears
 
     def predictGDPFromTrainSize(self, trainSize, algorithm):
-        X_train, X_test, Y_train, Y_test = train_test_split(self.__matrixX, self.__matrixY, test_size=trainSize,
+        X_train, X_test, Y_train, Y_test = train_test_split(self.__matrixX, self.__matrixY, train_size=trainSize,
                                                             random_state=42)
 
         X_train = X_train.values.reshape(-1, 4)
@@ -49,7 +49,8 @@ class ModelForCountry:
 
     def predictGDPFromData(self, consumption, investments, netTrade, govExpenditure, algorithm):
         X_test = np.array([[consumption, investments, netTrade, govExpenditure]])
-        Y_test = pd.DataFrame({"GDP": [0.0]}, index=[(consumption, investments, netTrade, govExpenditure)])
+        Y_test = pd.DataFrame({"GDP": [0.0]}, index=["Yours data"])
 
         result, _, _, _ = algorithm(self.__matrixX.values, X_test, self.__matrixY.values, Y_test)
+        result = result.drop(columns='Real Value GDP')
         return result

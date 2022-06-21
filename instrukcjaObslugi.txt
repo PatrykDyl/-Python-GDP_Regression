@@ -1,0 +1,23 @@
+Aplikacja przewidywania PKB składa się z kilku paneli: menu startowego, modelowania przewidywania, pobierania danych z bazy oraz instrukcji. Aplikacja zawiera także pasek narzędzi, który pozwala na dowolne przechodzenie pomiędzy panelami. W tym miejscu znajdziesz instrukcję obsługiwania każdego z paneli.
+
+Pasek narzędzi:
+Pasek narzędzi zawiera pola plik, narzędzia oraz widok. Klikając plik użytkownik ma możliwość przejścia do menu startowego lub do wyboru kraju modelowania przewidywania. Klikając narzędzia użytkownik ma możliwość przejścia do sekcji wyświetlania danych z bazy danych oraz do instrukcji. Klikając widok użytkownik ma możliwość wyboru pomiędzy maksymalizowaniem (rozszerzeniem do pełnych wymiarów okna) lub minimalizowaniem wielkości okna.
+
+W menu startowym użytkownik ma możliwość przejścia do trzech sekcji: modelowania przewidywania, wyświetlania danych oraz instrukcji. Sekcje te są podzielone na dwie części lewą (odpowiedzialną za funkcjonalność - użytkownik wybiera interesującą go funkcję oraz uzupełnia dane) oraz prawą (odpowiedzialną za wyświetlanie wyniku funkcji)
+
+Modelowanie przewidywania: użytkownik po wybraniu tej opcji przekierowany jest do okna z wyborem kraju, dla którego program ma modelować przewidywanie (może to zrobić wpisując nazwę kraju w polu tekstowym lub wybrać kraj z listy dostępnych krajów). Po stworzeniu modelu użytkownik ma możliwość: 
+wyświetlania wykresu przewidywanego PKB przy pomocy wybranych przez niego algorytmów oraz train sizu; 
+utworzenia przewidywania z porównaniem z rzeczywistymi danymi PKB dla wybranego roku oraz algorytmu; 
+utworzenia przewidywania PKB dla wybranego algorytmu oraz wprowadzanych danych (ponad wprowadzanymi danymi użytkownik ma zaprezentowane przykładowe wartości dla kraju z ostatniego roku);
+utworzenia przewidywania z porównaniem z rzeczywistymi danymi PKB dla wybranego train sizu oraz algorytmu.
+
+Wyświetlanie danych: użytkownik po wybraniu tej opcji ma możliwość:
+wyświetlenia danych z wybranego kraju z wybranego roku;
+wyświetlenia danych z wybranego kraju z wybranego kategorii;
+wyświetlenia wykresu PKB dla wybranego kraju;
+przeglądania listy dostępnych krajów w liście.
+
+Instrukcja: użytkownik po wybraniu tej opcji ma możliwość:
+przeglądania instrukcji dotyczących algorytmów oraz słownictwa technicznego związanego z przewidywaniem danych;
+przeglądania instrukcji dotyczących użytych w programie danych;
+przeglądania instrukcji obsługi.

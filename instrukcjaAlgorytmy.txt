@@ -1,0 +1,23 @@
+Program przewidywania PKB używa jedną z metod machine learningu - regresję w celu przewidywania PKB dla danego kraju.
+Aby przewidzieć PKB program potrzebuje danych z ubiegłych lat oraz wartości pkb z tych lat, aby "nauczyć się" dopasowywać wzór funkcji do rzeczywistego odwzorowania danych na PKB. Dane można podzielić na dwie części: dane dzięki którym maszyna będzie uczyła się przewidywać wartość PKB oraz dane, za pomocą których będzie przewidywana wartość PKB. Dane te dzieli funkcja train test split, której parametrem jest train size.
+
+Train size a test size:
+train size - wartość od 0 do 1, która przedstawia część jaką stanowią dane uczące we wszystkich danych.
+test size - wartość od 0 do 1, która przedstawia część jaką stanowią dane przewidywane we wszystkich danych. (1 - train size)
+
+W programie użyto trzech algorytmów, które mają za zadanie obliczyć parametry funkcji dopasowującej dane do PKB, a potem przeliczyć dane tak, aby końcowy wynik przewidywanego PKB był zbliożony do rzeczywistego.
+
+Algorytmy:
+SVR: Support Vector Regression (SVR) to funkcja regresji, która jest uogólniana przez Support Vector Machines — model uczenia maszynowego używany do klasyfikacji danych na danych ciągłych.
+(https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html, https://www.section.io/engineering-education/support-vector-regression-in-python/)
+
+LCM: Linear Custom Model wykorzystuje domyślny (napisany przez programistę) algorytm regresji liniowej oraz metodę curve_fit z biblioteki sklearn. Algorytm opiera się na liniowym przeliczaniu danych (współczynnik pierwszy * wartość pierwszej danej + współczynnik drugi * wartość drugiej danej... = wartość PKB), a funkcja curve_fit dopasowuje wartości tych współczynników tak, aby najlepiej dopasowywały się do wartości PKB, na których algorytm jest trenowany. (https://machinelearningmastery.com/curve-fitting-with-python/)
+
+LSM: Linear Sklearn Model a właściwie funkcja LinearRegression z biblioteki sklearn dopasowuje model liniowy ze współczynnikami w = (w1, …, wp), aby zminimalizować resztkową sumę kwadratów między obserwowanymi wartościami docelowymi w zbiorze danych a wartościami docelowymi przewidywanymi przez aproksymację liniową. Model również opiera się tak jak w przypadku LCM na regresji liniowej. (https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)
+
+Aby sprawdzić w jakim stopniu dany algorytm przewiduje dane, można posłużyć się kilkoma wyliczeniami błędów:
+mean squared error - średni błąd kwadratowy, MSE jest wartością oczekiwaną kwadratu „błędu”, czyli różnicy między estymatorem a wartością estymowaną.
+
+mean absolute percentage error -średni bezwzględny błąd procentowy, znany również jako średnie bezwzględne odchylenie procentowe, jest miarą dokładności predykcji metody prognozowania w statystyce.
+
+coefficient of determination - współczynnik determinacji ,informuje o tym, jaka część zmienności (wariancji) zmiennej objaśnianej w próbie pokrywa się z korelacjami ze zmiennymi zawartymi w modelu. Jest on więc miarą stopnia, w jakim model pasuje do próby.

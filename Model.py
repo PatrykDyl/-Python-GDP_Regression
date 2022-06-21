@@ -222,7 +222,7 @@ class Model:
         for columnName in columnNames:
             pyplot.plot(data["Year"].values, data[columnName].values, label=columnName + " [$]")
         pyplot.legend(loc="upper left")
-        pyplot.title("GDP predictions for " + model.__modelCountry.getCountry())
+        pyplot.title("GDP predictions for " + self.__modelCountry.getCountry())
         pyplot.xlabel("Years from " + str(data["Year"].values[0]) + " to " + str(data["Year"].values[-1]))
         pyplot.ylabel("GDP value in e^" + str(math.floor(math.log(data["Real Value GDP"].values[-1], 10))) + "$")
         pyplot.show()
@@ -337,10 +337,10 @@ if __name__ == '__main__':
     print(["Consumption", "Investments", "Net_Trade", "Gov_Expenditure", "GDP"])
     print(model.getLastModelData())
     model.showPredictionGraph(["LCM", "LSM", "SVR"], 0.8)
-    model.showGDPGraph("United States")
-    model.showPredictionGraphWithDataX(0.8, "Consumption")
-    model.showPredictionGraphWithDataX(0.8, "Investments")
-    model.showPredictionGraphWithDataX(0.8, "Net_Trade")
-    model.showPredictionGraphWithDataX(0.8, "Gov_Expenditure")
+    model.showGDPGraph("Poland")
+    # model.showPredictionGraphWithDataX(0.8, "Consumption")
+    # model.showPredictionGraphWithDataX(0.8, "Investments")
+    # model.showPredictionGraphWithDataX(0.8, "Net_Trade")
+    # model.showPredictionGraphWithDataX(0.8, "Gov_Expenditure")
 
 
